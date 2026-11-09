@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="FocusFlow — your simple productivity planner.">
+  <title>FocusFlow — Plan Your Day</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2>✦ FocusFlow</h2>
+      <p class="label">WORKSPACE</p>
+      <button class="nav active" data-view="all">▦ All Tasks</button>
+      <button class="nav" data-view="today">◷ Today</button>
+      <button class="nav" data-view="upcoming">▤ Upcoming</button>
+      <button class="nav" data-view="completed">✓ Completed</button>
+      <div class="tip">
+        <h3>✧ Small steps count.</h3>
+        <p>Focus on progress, not perfection.</p>
+      </div>
+    </aside>
+
+    <main>
+      <header>
+        <div>
+          <p class="label">YOUR WORKSPACE</p>
+          <h1 id="pageTitle">All Tasks</h1>
+        </div>
+        <span id="date"></span>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p>MAKE TODAY COUNT</p>
+          <h2 id="greeting">A little progress goes a long way.</h2>
+          <span>Choose one thing to focus on and get started.</span>
+        </div>
+        <div class="progress">
+          <strong id="percent">0%</strong>
+          <small>Completed</small>
+        </div>
+      </section>
+
+      <section class="stats">
+        <article><span>Total tasks</span><h2 id="total">0</h2></article>
+        <article><span>Completed</span><h2 id="done">0</h2></article>
+        <article><span>Due today</span><h2 id="due">0</h2></article>
+      </section>
+
+      <section class="tasks">
+        <div class="heading">
+          <h2 id="listTitle">All Tasks</h2>
+          <button id="addButton">＋ Add Task</button>
+        </div>
+
+        <form id="taskForm" hidden>
+          <input id="taskName" placeholder="What do you need to do?" maxlength="90" required>
+          <select id="priority">
+            <option value="normal">Normal</option>
+            <option value="high">High</option>
+            <option value="low">Low</option>
+          </select>
+          <input id="taskDate" type="date" required>
+          <button type="submit">Save</button>
+          <button type="button" id="cancel">Cancel</button>
+        </form>
+
+        <div class="filters">
+          <input id="search" placeholder="⌕ Search tasks...">
+          <select id="sort">
+            <option value="date">Due date</option>
+            <option value="priority">Priority</option>
+            <option value="newest">Newest</option>
+          </select>
+        </div>
+
+        <div id="taskList"></div>
+        <div id="empty" hidden>
+          <h3>✧ Nothing here yet</h3>
+          <p>Add a task and make your next step count.</p>
+        </div>
+      </section>
+
+      <footer>Made with focus ✦ · FocusFlow</footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
